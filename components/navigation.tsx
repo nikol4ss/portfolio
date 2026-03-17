@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const navLinks = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#skills", label: "Skills" },
+  { href: "#sobre", label: "Sobre mim" },
+  { href: "#skills", label: "Tecnologias" },
   { href: "#servicos", label: "Serviços" },
   { href: "#projetos", label: "Projetos" },
   { href: "#contato", label: "Contato" },
