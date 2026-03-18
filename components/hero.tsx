@@ -1,7 +1,7 @@
 "use client";
 
-import { Github, Linkedin, Download, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ArrowDown, FileDown, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
@@ -18,7 +18,7 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm mb-8">
             <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
             <span className="text-sm text-muted-foreground">
-                Disponível para Prestação de Serviços
+              Disponível para Prestação de Serviços
             </span>
           </div>
 
@@ -29,7 +29,7 @@ export function Hero() {
           </h1>
 
           <p className="text-lg md:text-1xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed text-pretty">
-            Bem-vindo ao meu portfólio, sou Nikolas.
+            Focado em Backend, com ênfase na construção de APIs
           </p>
 
           {/* CTA Buttons */}
@@ -39,7 +39,7 @@ export function Hero() {
               size="lg"
               className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90"
             >
-              <Link href="#contato">Iniciar Projeto</Link>
+              <Link href="#contato">Fale Comigo</Link>
             </Button>
             <Button
               asChild
@@ -71,13 +71,13 @@ export function Hero() {
             >
               <Github className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
             </a>
-            <a // TODO: anexar o curriculo de fato para donwload
+            <a // TODO: anexar o curriculo de fato para download, e tbm criar logica para se estiver ingles trocar arquivo para ingles
               href="/curriculo.pdf"
               download
               className="p-3 rounded-full border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all group"
               aria-label="Download Currículo"
             >
-              <Download className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+              <FileDown className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
             </a>
           </div>
         </div>
