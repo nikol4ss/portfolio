@@ -5,43 +5,64 @@ interface WorkCard {
   role: string;
   type: string;
   period: string;
-  description: string;
+  highlights: string[];
   techs: string[];
 }
 
 const works: WorkCard[] = [
-    {
-    company: "NK Software",
-    role: "Full Stack Developer",
-    type: "Freelance",
-    period: "jan de 2025 - Ativo",
-
-    description:
-      "Criei uma Software house que atua como prestadora de serviços, desenvolvendo softwares sob medida para otimizar processos e aumentar capital.",
-    techs: ["TypeScript", "Node.js", "Fastfy", "Vue.js", "Python", "FastAPI", "Django", "AWS"],
-  },
-
   {
     company: "V4 Company",
-    role: "Full Stack Developer Pleno",
-    type: "Autônomo",
+    role: "Full Stack Developer",
+    type: "PJ",
     period: "mai de 2025 - dez de 2025 · 8 meses",
-
-    description:
-      "Trabalhei desenvolvendo e mantendo sistemas, gerenciando QA, e code reviews, além de estruturar projetos usando Kanban. Também liderei projetos voltadas a clientes de alto faturamento e orientei desenvolvedores menos experientes.",
-    techs: ["Fastfy", "Zod", "Shadcn", "Axios", "TypeScript", "PHP", "Vue", "MySQL", "Kanban"],
+    highlights: [
+      "Contribuí no desenvolvimento de um SaaS multi-tenant em Node.js/TypeScript e Vue.js, atendendo +100 usuários com cacheamento em Redis.",
+      "Refatorei API legada de Node.js (JavaScript) para REST com Fastify (TypeScript) + Zod + Prisma ORM, reduzindo ~80% dos erros de validação e timeouts.",
+      "Mantive sistema corporativo legado em PHP 7/NGINX, eliminando gargalos e melhorando a lógica do core em produção.",
+      "Implementei ingestão de dados com Python (Pandas, SQLAlchemy) para integração em MySQL, garantindo consistência e eliminando duplicatas.",
+    ],
+    techs: [
+      "Fastify",
+      "TypeScript",
+      "Node.js",
+      "Vue.js",
+      "Zod",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "PHP",
+      "MySQL",
+      "Python",
+    ],
   },
   {
-    company: "Grupo Capsul",
-    role: "Full Stack Developer Junior",
+    company: "Capsul Brasil",
+    role: "Full Stack Developer",
     type: "Tempo integral",
     period: "jun de 2024 - mai de 2025 · 1 ano",
-
-    description:
-      "Na Capsul Brasil, atuei na manutenção contínua de sistemas em produção, realizando bugfixes e hotfixes, migração de sistemas legados para arquitetura SaaS e implementação de novas features via Scrum. Também desenvolvi sistema interno de tickets, automatizei processos com RPA, integrei sistemas logísticos com APIs externas e realizei monitoramento e testes para detecção de falhas em tempo real.",
-    techs: ["Vue", "Node.js", "TypeScript", "Tailwind", "RPA", "Python", "Selenium", "Scrum"],
+    highlights: [
+      "Participei da migração do sistema logístico core de Python/FastAPI para Node.js/Fastify, corrigindo falhas de requisição que causavam perda de pedidos.",
+      "Integrei plataformas de venda e transportadoras como Correios e Monetizze via APIs e Webhooks, mapeando payloads para consumo e despacho de pedidos.",
+      "Desenvolvi sistema interno de tickets com Node.js/Vue.js/MongoDB e mensageria via RabbitMQ, centralizando comunicação entre dev e suporte.",
+      "Automatizei testes e processos operacionais com Python (Selenium, Pytest) em loop 24/7 para validação de formulários de checkout.",
+      "Implementei pipelines CI/CD com GitHub Actions e Docker Compose, deployando via SSH em Linux com Terraform para infraestrutura AWS.",
+    ],
+    techs: [
+      "Node.js",
+      "Fastify",
+      "TypeScript",
+      "Vue.js",
+      "MongoDB",
+      "RabbitMQ",
+      "Python",
+      "Selenium",
+      "Pytest",
+      "Docker",
+      "GitHub Actions",
+      "Terraform",
+      "AWS",
+    ],
   },
-
 ];
 
 export function About() {
@@ -54,48 +75,62 @@ export function About() {
             <span className="text-sm uppercase tracking-widest text-muted-foreground mb-4 block">
               Sobre mim
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
-              Construindo o futuro,
+            <h2 className="text-3xl md:text-3xl font-bold mb-4 text-balance">
+              Saudações,
               <br />
-              <span className="text-muted-foreground">uma linha de código por vez</span>
+              <span className="text-muted-foreground">
+                há 3 anos construindo produtos que escalam.
+              </span>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Minha carreira começou há quatro anos, profissionalizando-me como desenvolvedor Fullstack.
-                Trabalhei em diversos projetos, atuando em todo o ciclo de desenvolvimento (SDLC),
-                aprimorando minha visão sobre regras de negócio e desenvolvendo habilidades técnicas.
+                Especializado em backend com Node.js e TypeScript, construo e
+                mantenho APIs RESTful com Fastify e AdonisJS — focado em
+                arquitetura modular, validação robusta com Zod e performance em
+                produção.
               </p>
               <p>
-                Atualmente, trabalho em projetos criando e debugando soluções que operam
-                em ambientes reais de forma contínua. Também busco oportunidades empresariais,
-                oferecendo meus serviços como prestador.
+                Na camada de dados, trabalho com PostgreSQL, MySQL e MongoDB,
+                usando Prisma e Lucid como ORMs. Aplico Redis para cacheamento e
+                RabbitMQ para mensageria em sistemas distribuídos.
               </p>
               <p>
-                Quando não estou codando, estudo novas formas de aplicar lógica e resolver problemas,
-                contribuo para projetos open source e planejo meus próximos passos profissionais.
+                No frontend, desenvolvo interfaces reativas com Vue.js — domínio
+                em Vue Router, Pinia, TanStack Query e Tailwind CSS, com
+                experiência em SPAs, SSR e SSG com foco em performance e SEO.
+              </p>
+              <p>
+                Containerizo ambientes com Docker e Docker Compose, automatizo
+                pipelines CI/CD com GitHub Actions, escrevo testes com Jest e
+                Pytest, e provisiono infraestrutura na AWS com EC2 e Terraform.
               </p>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-border">
               <div>
-                <span className="text-3xl font-bold text-foreground">4+</span>
-                <p className="text-sm text-muted-foreground mt-1">Anos de experiência</p>
+                <span className="text-3xl font-bold text-foreground">3+</span>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Anos de experiência
+                </p>
               </div>
               <div>
                 <span className="text-3xl font-bold text-foreground">15+</span>
-                <p className="text-sm text-muted-foreground mt-1">Projetos entregues</p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Projetos entregues
+                </p>
               </div>
               <div>
                 <span className="text-3xl font-bold text-foreground">20+</span>
-                <p className="text-sm text-muted-foreground mt-1">Clientes satisfeitos</p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Clientes satisfeitos
+                </p>
               </div>
             </div>
           </div>
 
           {/* Cards de Trabalhos */}
           <div>
-            {/* Título Experiências */}
             <span className="text-sm uppercase tracking-widest text-muted-foreground mb-4 block">
               Experiências
             </span>
@@ -107,12 +142,24 @@ export function About() {
                   className="flex flex-col border border-border rounded-sm p-3 bg-card/80 hover:shadow-md transition-shadow"
                 >
                   <div>
-                    <h4 className="font-bold text-foreground">{work.role} <span className="text-sm text-muted-foreground">{work.company} · {work.type}</span></h4>
+                    <h4 className="font-bold text-foreground">
+                      {work.role}{" "}
+                      <span className="text-sm text-muted-foreground">
+                        {work.company} · {work.type}
+                      </span>
+                    </h4>
                   </div>
 
-                  <div className="text-sm mb-1">{work.period}</div>
+                  <div className="text-sm mb-2">{work.period}</div>
 
-                  <p className="text-sm text-muted-foreground mb-2">{work.description}</p>
+                  <ul className="text-sm text-muted-foreground mb-3 space-y-1 list-none">
+                    {work.highlights.map((item, i) => (
+                      <li key={i} className="flex gap-2">
+                        <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full bg-muted-foreground/50" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
 
                   <div className="flex flex-wrap gap-2">
                     {work.techs.map((tech, i) => (
