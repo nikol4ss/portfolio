@@ -1,20 +1,23 @@
 "use client";
 
+import { LocaleToggle } from "@/components/LocaleToggle";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const navLinks = [
-  { href: "#sobre", label: "Sobre mim" },
-  { href: "#skills", label: "Tecnologias" },
-  { href: "#projetos", label: "Projetos" },
-];
-
 export function Navigation() {
+  const t = useTranslations("nav");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#sobre", label: t("about") },
+    { href: "#skills", label: t("skills") },
+    { href: "#projetos", label: t("projects") },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +43,6 @@ export function Navigation() {
           {"<nk />"}
         </Link>
 
-        {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -54,24 +56,25 @@ export function Navigation() {
             </li>
           ))}
           <ThemeToggle />
+          <LocaleToggle />
         </ul>
 
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
-        </Button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>
+        </div>
       </nav>
 
-      {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
           <ul className="container mx-auto px-6 py-4 flex flex-col gap-4">
@@ -86,6 +89,7 @@ export function Navigation() {
                 </Link>
               </li>
             ))}
+            <LocaleToggle />
           </ul>
         </div>
       )}

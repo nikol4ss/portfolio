@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -44,6 +45,7 @@ const skills = [
 ];
 
 export function Skills() {
+  const t = useTranslations("skills");
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -77,10 +79,13 @@ export function Skills() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm uppercase tracking-widest text-muted-foreground mb-4 block">
-            Tecnologias
+            {t("label")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-balance">
-            Stack que eu <span className="text-muted-foreground">domino</span>
+            {t("title")}{" "}
+            <span className="text-muted-foreground">
+              {t("title_highlight")}
+            </span>
           </h2>
         </div>
 
@@ -145,9 +150,9 @@ export function Skills() {
 
         <div className="mt-16 text-center">
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Sempre me adaptando às novas tecnologias do mercado.
+            {t("footer1")}
           </p>
-          <p className="max-w-xl mx-auto">Aprendendo o que o desafio exigir.</p>
+          <p className="max-w-xl mx-auto">{t("footer2")}</p>
         </div>
       </div>
     </section>

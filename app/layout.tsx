@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/4.png",
+        url: "/nk.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/3.png",
+        url: "/nk.png",
         media: "(prefers-color-scheme: dark)",
       },
     ],
@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
           <Analytics />

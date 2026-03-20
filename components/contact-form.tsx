@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,17 +11,20 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, Download, Github, Linkedin, Send } from "lucide-react";
-import { useState } from "react";
-
-const serviceOptions = [
-  { value: "freelance", label: "Desenvolvimento Freelance" },
-  { value: "saas", label: "Projeto SaaS" },
-  { value: "rpa", label: "Automação / RPA" },
-  { value: "consulting", label: "Consultoria" },
-  { value: "other", label: "Outro" },
-];
+import { useTranslations } from "next-intl";
+import React, { useState } from "react";
 
 export function ContactForm() {
+  const t = useTranslations("contact");
+
+  const serviceOptions = [
+    { value: "freelance", label: t("opt_freelance") },
+    { value: "saas", label: t("opt_saas") },
+    { value: "rpa", label: t("opt_rpa") },
+    { value: "consulting", label: t("opt_consulting") },
+    { value: "other", label: t("opt_other") },
+  ];
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -37,14 +38,9 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-
     setIsSubmitting(false);
     setIsSubmitted(true);
-
-    // Reset form after showing success
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: "", email: "", phone: "", service: "", message: "" });
@@ -56,29 +52,30 @@ export function ContactForm() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm uppercase tracking-widest text-muted-foreground mb-4 block">
-            Contato
+            {t("label")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-            Vamos trabalhar{" "}
-            <span className="text-muted-foreground">juntos?</span>
+            {t("title")}{" "}
+            <span className="text-muted-foreground">
+              {t("title_highlight")}
+            </span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Gostou do meu perfil? Entre em contato para colaboração em projetos.
+            {t("subtitle")}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">
-          {/* Contact Form */}
           <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
-                    Nome
+                    {t("name")}
                   </label>
                   <Input
                     id="name"
-                    placeholder="Seu nome"
+                    placeholder={t("name_placeholder")}
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -89,7 +86,7 @@ export function ContactForm() {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
-                    Email
+                    {t("email")}
                   </label>
                   <Input
                     id="email"
@@ -108,7 +105,7 @@ export function ContactForm() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium">
-                    Telefone
+                    {t("phone")}
                   </label>
                   <Input
                     id="phone"
@@ -123,7 +120,7 @@ export function ContactForm() {
                 </div>
                 <div className="space-y-2 w-full">
                   <label htmlFor="service" className="text-sm font-medium">
-                    Tipo de Projeto
+                    {t("project_type")}
                   </label>
                   <Select
                     value={formData.service}
@@ -132,7 +129,7 @@ export function ContactForm() {
                     }
                   >
                     <SelectTrigger className="w-full bg-card border-border focus:border-foreground/50">
-                      <SelectValue placeholder="Selecione uma opção" />
+                      <SelectValue placeholder={t("select_placeholder")} />
                     </SelectTrigger>
                     <SelectContent>
                       {serviceOptions.map((option) => (
@@ -147,11 +144,11 @@ export function ContactForm() {
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
-                  Mensagem
+                  {t("message")}
                 </label>
                 <Textarea
                   id="message"
-                  placeholder="Conte mais sobre seu projeto..."
+                  placeholder={t("message_placeholder")}
                   rows={5}
                   value={formData.message}
                   onChange={(e) =>
@@ -171,29 +168,28 @@ export function ContactForm() {
                 {isSubmitted ? (
                   <>
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    Mensagem Enviada!
+                    {t("sent")}
                   </>
                 ) : isSubmitting ? (
                   <>
                     <span className="w-4 h-4 mr-2 border-2 border-background/30 border-t-background rounded-full animate-spin" />
-                    Enviando...
+                    {t("sending")}
                   </>
                 ) : (
                   <>
                     <Send className="w-4 h-4 mr-2" />
-                    Enviar Mensagem
+                    {t("send")}
                   </>
                 )}
               </Button>
             </form>
           </div>
 
-          {/* Social Links */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="text-lg font-semibold mb-6">Ou conecte-se comigo</h3>
+            <h3 className="text-lg font-semibold mb-6">{t("connect")}</h3>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/nikol4s/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all group"
@@ -204,13 +200,13 @@ export function ContactForm() {
               <div>
                 <span className="font-medium block">LinkedIn</span>
                 <span className="text-sm text-muted-foreground">
-                  /in/seu-perfil
+                  /in/nikol4s
                 </span>
               </div>
             </a>
 
             <a
-              href="https://github.com"
+              href="https://github.com/nikol4ss"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all group"
@@ -220,24 +216,23 @@ export function ContactForm() {
               </div>
               <div>
                 <span className="font-medium block">GitHub</span>
-                <span className="text-sm text-muted-foreground">
-                  @seu-usuario
-                </span>
+                <span className="text-sm text-muted-foreground">@nikol4ss</span>
               </div>
             </a>
 
             <a
-              href="/curriculo.pdf"
-              download
+              href="https://docs.google.com/document/d/1ZvTUC2MTjI8vln9EgnIQebdnCq_NnujG52sOTFLpiqc/export?format=pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all group"
             >
               <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-foreground transition-colors">
                 <Download className="w-5 h-5 text-muted-foreground group-hover:text-background transition-colors" />
               </div>
               <div>
-                <span className="font-medium block">Currículo</span>
+                <span className="font-medium block">{t("resume")}</span>
                 <span className="text-sm text-muted-foreground">
-                  Download PDF
+                  {t("resume_sub")}
                 </span>
               </div>
             </a>

@@ -1,8 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export function Footer() {
+  const t = useTranslations("footer");
   const currentYear = new Date().getFullYear();
 
   return (
@@ -11,13 +13,13 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <Link
             href="/"
-            className="text-lg font-bold tracking-tight text-foreground"
+            className="text-xl font-bold tracking-tight text-foreground hover:text-muted-foreground transition-colors"
           >
             {"<nk />"}
           </Link>
 
           <p className="text-sm text-muted-foreground text-center">
-            © {currentYear} Todos os direitos reservados.
+            © {currentYear} {t("rights")}
           </p>
         </div>
       </div>
