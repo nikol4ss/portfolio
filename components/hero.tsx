@@ -29,7 +29,7 @@ export function Hero() {
           </h1>
 
           <p className="text-lg md:text-1xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed text-pretty">
-            +3 anos em Node.js com TypeScript. construindo APIs RESTful
+            +3 anos em Node.js com TypeScript construindo APIs RESTful
           </p>
 
           {/* CTA Buttons */}
@@ -72,10 +72,11 @@ export function Hero() {
               <Github className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
             </a>
             <a // TODO: anexar o curriculo de fato para download, e tbm criar logica para se estiver ingles trocar arquivo para ingles
-              href="/curriculo.pdf"
-              download
+              href="https://docs.google.com/document/d/1ZvTUC2MTjI8vln9EgnIQebdnCq_NnujG52sOTFLpiqc/edit?usp=sharing"
+              download="nikolas-campos.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 rounded-full border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all group"
-              aria-label="Download Currículo"
             >
               <FileDown className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
             </a>

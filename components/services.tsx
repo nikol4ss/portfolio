@@ -5,24 +5,39 @@ import { Code, Cpu, Zap } from "lucide-react";
 const services = [
   {
     icon: Code,
-    title: "Freelance Development",
+    title: "APIs & Backend",
     description:
-      "Desenvolvimento web completo, do frontend ao backend. Sites, landing pages e aplicações web responsivas e modernas.",
-    features: ["Websites", "Landing Pages", "E-commerce", "PWAs"],
+      "Desenvolvimento e manutenção de APIs RESTful em Node.js com TypeScript. Do contrato da rota à integração com banco, cache e mensageria — entrego backend pronto pra produção.",
+    features: [
+      "APIs RESTful",
+      "Autenticação JWT/OAuth",
+      "Integrações via Webhook",
+      "Documentação",
+    ],
   },
   {
     icon: Cpu,
-    title: "Projetos SaaS",
+    title: "SaaS & Produtos Web",
     description:
-      "Construção de produtos SaaS escaláveis, com arquitetura moderna, autenticação, pagamentos e dashboards completos.",
-    features: ["MVP Development", "Escalabilidade", "API Design", "Dashboard"],
+      "Construção de produtos SaaS com arquitetura multi-tenant, painel administrativo e frontend em Vue.js. Do MVP ao deploy com Docker e AWS.",
+    features: [
+      "Multi-tenant",
+      "MVP em Node.js + Vue.js",
+      "Deploy em AWS",
+      "CI/CD automatizado",
+    ],
   },
   {
     icon: Zap,
-    title: "RPA & Automações",
+    title: "Automações & Integrações",
     description:
-      "Automação de processos repetitivos e integração entre sistemas. Bots, scrapers e workflows automatizados.",
-    features: ["Web Scraping", "Bot Development", "Integração API", "Workflows"],
+      "Automação de processos operacionais com Python e integração entre plataformas via APIs e Webhooks. Redução de trabalho manual e consistência de dados.",
+    features: [
+      "Web Scraping",
+      "Ingestão de dados",
+      "Integração entre sistemas",
+      "Bots 24/7",
+    ],
   },
 ];
 

@@ -1,57 +1,53 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Star, GitFork, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Github,
+  Star,
+} from "lucide-react";
+import { useRef, useState } from "react";
 
 const projects = [
   {
-    name: "saas-dashboard",
-    description: "Dashboard completo para SaaS com autenticação, pagamentos Stripe e analytics em tempo real.",
+    name: "Multi-Gateway Payment API",
+    description:
+      "API de pagamentos multi-gateway com fallback automático, roles de acesso e reembolso por gateway de origem.",
     language: "TypeScript",
-    stars: 128,
-    forks: 24,
-    url: "https://github.com",
-    demo: "https://demo.com",
-    tags: ["Next.js", "Tailwind", "Stripe"],
+    stars: 2,
+    url: "https://github.com/nikol4ss/multi-gateway-payment-api",
+    demo: "https://www.postman.com/nikol4ss/api-public/collection/43306273-9c441f93-f912-4330-b209-194eb24bb151?action=share&source=copy-link&creator=43306273",
+    tags: ["Node.js", "AdonisJs", "MySQL", "Docker"],
   },
   {
-    name: "rpa-automation-bot",
-    description: "Bot de automação para scraping de dados e integração com APIs externas.",
+    name: "Web-Scraper API",
+    description:
+      "Microsserviço de monitoramento de preços com scraping dinâmico via Selenium, processamento com Pandas e endpoints REST para histórico e média de preços.",
     language: "Python",
-    stars: 89,
-    forks: 15,
-    url: "https://github.com",
+    stars: 2,
+    url: "https://github.com/nikol4ss/web-scraper-api",
     tags: ["Python", "Selenium", "API"],
   },
   {
-    name: "e-commerce-platform",
-    description: "Plataforma de e-commerce completa com carrinho, checkout e painel admin.",
-    language: "TypeScript",
-    stars: 256,
-    forks: 42,
-    url: "https://github.com",
-    demo: "https://demo.com",
-    tags: ["React", "Node.js", "PostgreSQL"],
-  },
-  {
-    name: "ai-chatbot-assistant",
-    description: "Assistente virtual com IA para atendimento ao cliente e suporte automatizado.",
+    name: "Doom PDF",
+    description:
+      "Port do Doom rodando dentro de um PDF via JavaScript, C compilado com Emscripten para asm.js, renderizado em ASCII via campos de texto.",
     language: "Python",
-    stars: 67,
-    forks: 8,
-    url: "https://github.com",
-    tags: ["Python", "OpenAI", "FastAPI"],
+    stars: 8,
+    url: "https://github.com/nikol4ss/doompdf",
+    demo: "https://doompdf.pages.dev/doom.pdf",
+    tags: ["Python", "Selenium", "API"],
   },
   {
-    name: "inventory-management",
-    description: "Sistema de gestão de estoque com relatórios, alertas e integração ERP.",
-    language: "TypeScript",
-    stars: 45,
-    forks: 12,
-    url: "https://github.com",
-    demo: "https://demo.com",
-    tags: ["Next.js", "Prisma", "tRPC"],
+    name: "NXT Lego Python",
+    description:
+      "Automação robótica em Python controlando motores e sensores LEGO NXT para movimentação programável.",
+    language: "Python",
+    stars: 0,
+    url: "https://github.com/nikol4ss/nxt-lego",
+    tags: ["Python", "Selenium", "API"],
   },
 ];
 
@@ -88,7 +84,8 @@ export function Projects() {
               Portfólio
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-balance">
-              Projetos em <span className="text-muted-foreground">destaque</span>
+              Projetos em{" "}
+              <span className="text-muted-foreground">destaque</span>
             </h2>
           </div>
 
@@ -147,10 +144,6 @@ export function Projects() {
                     <Star className="w-3 h-3" />
                     {project.stars}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <GitFork className="w-3 h-3" />
-                    {project.forks}
-                  </span>
                 </div>
               </div>
 
@@ -201,7 +194,7 @@ export function Projects() {
         {/* View All Link */}
         <div className="mt-12 text-center">
           <a
-            href="https://github.com"
+            href="https://github.com/nikol4ss?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"

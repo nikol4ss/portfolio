@@ -7,6 +7,7 @@ interface WorkCard {
   period: string;
   highlights: string[];
   techs: string[];
+  logo: string;
 }
 
 const works: WorkCard[] = [
@@ -15,6 +16,7 @@ const works: WorkCard[] = [
     role: "Full Stack Developer",
     type: "Remota",
     period: "mai de 2025 - dez de 2025 · 8 meses",
+    logo: "/v4.jpeg",
     highlights: [
       "Contribuí no desenvolvimento de um SaaS multi-tenant em Node.js/TypeScript e Vue.js, atendendo +100 usuários com cacheamento em Redis.",
       "Refatorei API legada de Node.js (JavaScript) para REST com Fastify (TypeScript) + Zod + Prisma ORM, reduzindo ~80% dos erros de validação e timeouts.",
@@ -36,7 +38,7 @@ const works: WorkCard[] = [
       "Prisma",
       "Redis",
       "Git",
-      "Github",
+      "GitHub",
       "Jest",
       "Docker",
       "Kanban",
@@ -47,6 +49,7 @@ const works: WorkCard[] = [
     role: "Full Stack Developer",
     type: "Presencial",
     period: "jun de 2024 - mai de 2025 · 1 ano",
+    logo: "/capsul.jpeg",
     highlights: [
       "Participei da migração do sistema logístico core de Python/FastAPI para Node.js/Fastify, corrigindo falhas de requisição que causavam perda de pedidos.",
       "Integrei plataformas de venda e transportadoras como Correios e Monetizze via APIs e Webhooks, mapeando payloads para consumo e despacho de pedidos.",
@@ -104,7 +107,7 @@ export function About() {
             <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
               <p>
                 Construo e mantenho APIs RESTful assíncronas em Node.js com
-                TypeScript com Fastify para arquitetura modular e customizada,
+                TypeScript. Fastify para arquitetura modular e customizada,
                 AdonisJS para aplicações distribuídas e integradas. Autenticação
                 com JWT e OAuth, segurança com CORS, CSRF e Rate Limiting,
                 validação de contratos com Zod e serialização robusta.
@@ -112,7 +115,7 @@ export function About() {
               <p>
                 Na camada de dados, trabalho em SQL e NoSQL com PostgreSQL,
                 MySQL e MongoDB com Prisma ORM, migrations e seeds. Redis para
-                cacheamento e RabbitMQ para mensageria em sistemas distribuídos.
+                cacheamento e RabbitMQ para mensageria.
               </p>
               <p>
                 Interfaces reutilizáveis em Vue.js com Vue Router, Pinia para

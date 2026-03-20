@@ -66,10 +66,8 @@ export function Skills() {
                 height={28}
                 className={
                   skill.darkIcon
-                    ? // ícone escuro: fica branco no hover (mantém invert)
-                      "brightness-0 invert transition-all duration-300 group-hover:scale-140"
-                    : // ícone colorido: mostra a cor original no hover
-                      "brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300 group-hover:scale-140"
+                    ? "brightness-0 invert transition-all duration-300 group-hover:scale-140"
+                    : "brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300 group-hover:scale-140"
                 }
               />
 
@@ -86,7 +84,6 @@ export function Skills() {
         <div className="mt-16 text-center">
           <p className="text-muted-foreground max-w-xl mx-auto">
             Sempre aprendendo e me adaptando às novas tecnologias do mercado.
-            Foco em ferramentas que entregam resultados reais.
           </p>
         </div>
       </div>

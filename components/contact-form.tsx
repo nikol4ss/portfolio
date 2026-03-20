@@ -1,12 +1,9 @@
 "use client";
 
-import React from "react"
+import React from "react";
 
-import { useState } from "react";
-import { Send, Linkedin, Github, Download, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -14,6 +11,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { CheckCircle, Download, Github, Linkedin, Send } from "lucide-react";
+import { useState } from "react";
 
 const serviceOptions = [
   { value: "freelance", label: "Desenvolvimento Freelance" },
@@ -59,10 +59,11 @@ export function ContactForm() {
             Contato
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-            Vamos trabalhar <span className="text-muted-foreground">juntos?</span>
+            Vamos trabalhar{" "}
+            <span className="text-muted-foreground">juntos?</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Tem um projeto em mente? Entre em contato e vamos transformar sua ideia em realidade.
+            Gostou do meu perfil? Entre em contato para colaboração em projetos.
           </p>
         </div>
 
@@ -120,7 +121,7 @@ export function ContactForm() {
                     className="bg-card border-border focus:border-foreground/50"
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 w-full">
                   <label htmlFor="service" className="text-sm font-medium">
                     Tipo de Projeto
                   </label>
@@ -130,7 +131,7 @@ export function ContactForm() {
                       setFormData({ ...formData, service: value })
                     }
                   >
-                    <SelectTrigger className="bg-card border-border focus:border-foreground/50">
+                    <SelectTrigger className="w-full bg-card border-border focus:border-foreground/50">
                       <SelectValue placeholder="Selecione uma opção" />
                     </SelectTrigger>
                     <SelectContent>
@@ -202,7 +203,9 @@ export function ContactForm() {
               </div>
               <div>
                 <span className="font-medium block">LinkedIn</span>
-                <span className="text-sm text-muted-foreground">/in/seu-perfil</span>
+                <span className="text-sm text-muted-foreground">
+                  /in/seu-perfil
+                </span>
               </div>
             </a>
 
@@ -217,7 +220,9 @@ export function ContactForm() {
               </div>
               <div>
                 <span className="font-medium block">GitHub</span>
-                <span className="text-sm text-muted-foreground">@seu-usuario</span>
+                <span className="text-sm text-muted-foreground">
+                  @seu-usuario
+                </span>
               </div>
             </a>
 
@@ -231,7 +236,9 @@ export function ContactForm() {
               </div>
               <div>
                 <span className="font-medium block">Currículo</span>
-                <span className="text-sm text-muted-foreground">Download PDF</span>
+                <span className="text-sm text-muted-foreground">
+                  Download PDF
+                </span>
               </div>
             </a>
           </div>
