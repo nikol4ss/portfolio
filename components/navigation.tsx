@@ -1,5 +1,6 @@
 "use client";
 
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -9,7 +10,6 @@ const navLinks = [
   { href: "#sobre", label: "Sobre mim" },
   { href: "#skills", label: "Tecnologias" },
   { href: "#projetos", label: "Projetos" },
-  { href: "#contato", label: "Contato" },
 ];
 
 export function Navigation() {
@@ -53,6 +53,7 @@ export function Navigation() {
               </Link>
             </li>
           ))}
+          <ThemeToggle />
         </ul>
 
         {/* Mobile Menu Button */}
