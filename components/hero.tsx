@@ -29,7 +29,7 @@ export function Hero() {
           </h1>
 
           <p className="text-lg md:text-1xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed text-pretty">
-            Focado em Backend, com ênfase na construção de APIs
+            +3 anos em Node.js com TypeScript. construindo APIs RESTful
           </p>
 
           {/* CTA Buttons */}

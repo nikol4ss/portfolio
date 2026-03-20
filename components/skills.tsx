@@ -1,49 +1,42 @@
 "use client";
 
 const skills = [
-  // ── Linguagens
   { name: "TypeScript", slug: "typescript" },
   { name: "Python", slug: "python" },
-  { name: "PHP", slug: "php" },
 
-  // ── Backend
   { name: "Node.js", slug: "nodedotjs" },
-  { name: "Fastify", slug: "fastify" },
+  { name: "Fastify", slug: "fastify", darkIcon: true },
   { name: "AdonisJS", slug: "adonisjs" },
-  { name: "FastAPI", slug: "fastapi" },
   { name: "Django", slug: "django" },
+  { name: "FastAPI", slug: "fastapi" },
+  { name: "Postman", slug: "postman" },
 
-  // ── Frontend
   { name: "Vue.js", slug: "vuedotjs" },
   { name: "Vite", slug: "vite" },
   { name: "Pinia", slug: "pinia" },
   { name: "Axios", slug: "axios" },
+  { name: "TanStack", slug: "tanstack", darkIcon: true },
   { name: "Tailwind CSS", slug: "tailwindcss" },
-  { name: "shadcn/ui", slug: "shadcnui" },
+  { name: "shadcn/ui", slug: "shadcnui", darkIcon: true },
   { name: "PrimeVue", slug: "primevue" },
 
-  // ── Banco de Dados
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MySQL", slug: "mysql" },
-  { name: "MongoDB", slug: "mongodb" },
-  { name: "Prisma", slug: "prisma" },
+  { name: "Prisma", slug: "prisma", darkIcon: true },
   { name: "Redis", slug: "redis" },
   { name: "RabbitMQ", slug: "rabbitmq" },
-
-  // ── Testes & Qualidade
   { name: "Zod", slug: "zod" },
   { name: "Jest", slug: "jest" },
   { name: "Pytest", slug: "pytest" },
   { name: "Selenium", slug: "selenium" },
   { name: "Pandas", slug: "pandas" },
 
-  // ── Infra / DevOps
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
   { name: "Docker", slug: "docker" },
   { name: "YAML", slug: "yaml" },
+  { name: "Terraform", slug: "terraform" },
   { name: "GitHub Actions", slug: "githubactions" },
   { name: "Git", slug: "git" },
-  { name: "GitHub", slug: "github" },
-  { name: "Terraform", slug: "terraform" },
+  { name: "GitHub", slug: "github", darkIcon: true },
 ];
 
 export function Skills() {
@@ -64,15 +57,23 @@ export function Skills() {
             <div
               key={skill.slug}
               className="group relative aspect-square rounded-xl border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all duration-300 flex items-center justify-center cursor-pointer"
-              style={{ animationDelay: `${index * 50}ms` }}
+              style={{ animationDelay: `${index * 40}ms` }}
             >
               <img
                 src={`https://cdn.simpleicons.org/${skill.slug}`}
                 alt={skill.name}
                 width={28}
                 height={28}
-                className="brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300 group-hover:scale-140"
+                className={
+                  skill.darkIcon
+                    ? // ícone escuro: fica branco no hover (mantém invert)
+                      "brightness-0 invert transition-all duration-300 group-hover:scale-140"
+                    : // ícone colorido: mostra a cor original no hover
+                      "brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300 group-hover:scale-140"
+                }
               />
+
+              {/* fastify, tanstack, shadcn, github  */}
 
               {/* Tooltip */}
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">

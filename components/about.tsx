@@ -13,7 +13,7 @@ const works: WorkCard[] = [
   {
     company: "V4 Company",
     role: "Full Stack Developer",
-    type: "PJ",
+    type: "Remota",
     period: "mai de 2025 - dez de 2025 · 8 meses",
     highlights: [
       "Contribuí no desenvolvimento de um SaaS multi-tenant em Node.js/TypeScript e Vue.js, atendendo +100 usuários com cacheamento em Redis.",
@@ -22,47 +22,66 @@ const works: WorkCard[] = [
       "Implementei ingestão de dados com Python (Pandas, SQLAlchemy) para integração em MySQL, garantindo consistência e eliminando duplicatas.",
     ],
     techs: [
-      "Fastify",
       "TypeScript",
-      "Node.js",
-      "Vue.js",
-      "Zod",
-      "Prisma",
-      "PostgreSQL",
-      "Redis",
-      "PHP",
-      "MySQL",
       "Python",
+      "PHP",
+      "Node.js",
+      "Fastify",
+      "Zod",
+      "Vue.js",
+      "Axios",
+      "TanStack",
+      "Shadcn",
+      "MySQL",
+      "Prisma",
+      "Redis",
+      "Git",
+      "Github",
+      "Jest",
+      "Docker",
+      "Kanban",
     ],
   },
   {
     company: "Capsul Brasil",
     role: "Full Stack Developer",
-    type: "Tempo integral",
+    type: "Presencial",
     period: "jun de 2024 - mai de 2025 · 1 ano",
     highlights: [
       "Participei da migração do sistema logístico core de Python/FastAPI para Node.js/Fastify, corrigindo falhas de requisição que causavam perda de pedidos.",
       "Integrei plataformas de venda e transportadoras como Correios e Monetizze via APIs e Webhooks, mapeando payloads para consumo e despacho de pedidos.",
-      "Desenvolvi sistema interno de tickets com Node.js/Vue.js/MongoDB e mensageria via RabbitMQ, centralizando comunicação entre dev e suporte.",
+      "Desenvolvi sistema interno de tickets com Aeria Lang (Node.js/Vue.js/MongoDB) e mensageria via RabbitMQ, centralizando comunicação entre dev e suporte.",
       "Automatizei testes e processos operacionais com Python (Selenium, Pytest) em loop 24/7 para validação de formulários de checkout.",
       "Implementei pipelines CI/CD com GitHub Actions e Docker Compose, deployando via SSH em Linux com Terraform para infraestrutura AWS.",
     ],
     techs: [
-      "Node.js",
-      "Fastify",
       "TypeScript",
+      "Python",
+      "Node.js",
+      "FastApi",
+      "Fastify",
       "Vue.js",
+      "TanStack",
       "MongoDB",
       "RabbitMQ",
-      "Python",
       "Selenium",
       "Pytest",
+      "Jest",
       "Docker",
       "GitHub Actions",
       "Terraform",
       "AWS",
     ],
   },
+];
+
+const dailyTechs = [
+  { name: "TypeScript", slug: "typescript", darkIcon: false },
+  { name: "Node.js", slug: "nodedotjs", darkIcon: false },
+  { name: "Fastify", slug: "fastify", darkIcon: true },
+  { name: "PostgreSQL", slug: "vuedotjs", darkIcon: false },
+  { name: "PostgreSQL", slug: "postgresql", darkIcon: false },
+  { name: "Docker", slug: "docker", darkIcon: false },
 ];
 
 export function About() {
@@ -79,52 +98,53 @@ export function About() {
               Saudações,
               <br />
               <span className="text-muted-foreground">
-                há 3 anos construindo produtos que escalam.
+                iniciei minha carreira há três anos.
               </span>
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
               <p>
-                Especializado em backend com Node.js e TypeScript, construo e
-                mantenho APIs RESTful com Fastify e AdonisJS — focado em
-                arquitetura modular, validação robusta com Zod e performance em
-                produção.
+                Construo e mantenho APIs RESTful assíncronas em Node.js com
+                TypeScript com Fastify para arquitetura modular e customizada,
+                AdonisJS para aplicações distribuídas e integradas. Autenticação
+                com JWT e OAuth, segurança com CORS, CSRF e Rate Limiting,
+                validação de contratos com Zod e serialização robusta.
               </p>
               <p>
-                Na camada de dados, trabalho com PostgreSQL, MySQL e MongoDB,
-                usando Prisma e Lucid como ORMs. Aplico Redis para cacheamento e
-                RabbitMQ para mensageria em sistemas distribuídos.
+                Na camada de dados, trabalho em SQL e NoSQL com PostgreSQL,
+                MySQL e MongoDB com Prisma ORM, migrations e seeds. Redis para
+                cacheamento e RabbitMQ para mensageria em sistemas distribuídos.
               </p>
               <p>
-                No frontend, desenvolvo interfaces reativas com Vue.js — domínio
-                em Vue Router, Pinia, TanStack Query e Tailwind CSS, com
-                experiência em SPAs, SSR e SSG com foco em performance e SEO.
+                Interfaces reutilizáveis em Vue.js com Vue Router, Pinia para
+                estado, TanStack Query para dados assíncronos e Tailwind CSS com
+                libs de componentes de Shadcn e PrimeVue. Experiência em SPA,
+                SSR e SSG com foco em performance e SEO.
               </p>
               <p>
-                Containerizo ambientes com Docker e Docker Compose, automatizo
-                pipelines CI/CD com GitHub Actions, escrevo testes com Jest e
-                Pytest, e provisiono infraestrutura na AWS com EC2 e Terraform.
+                Ambientes containerizados com Docker e Docker Compose, pipelines
+                CI/CD com GitHub Actions, testes unitários e de integração com
+                Jest e infraestrutura na AWS com EC2 e Terraform.
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-border">
-              <div>
-                <span className="text-3xl font-bold text-foreground">3+</span>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Anos de experiência
-                </p>
-              </div>
-              <div>
-                <span className="text-3xl font-bold text-foreground">15+</span>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Projetos entregues
-                </p>
-              </div>
-              <div>
-                <span className="text-3xl font-bold text-foreground">20+</span>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Clientes satisfeitos
-                </p>
+            {/* Status */}
+            <div className="mt-5 pt-5 border-t border-border">
+              <span className="text-sm uppercase tracking-widest text-muted-foreground mb-4 block">
+                Trabalho Atual
+              </span>
+              <div className="flex items-center gap-4">
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-foreground">
+                    Desenvolvendo freelas e projetos pessoais.
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-yellow-600 animate-pulse shrink-0" />
+                    <p className="text-muted-foreground">
+                      Buscando oportunidades como Desenvolvedor Fullstack ou
+                      Backend.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -154,8 +174,8 @@ export function About() {
 
                   <ul className="text-sm text-muted-foreground mb-3 space-y-1 list-none">
                     {work.highlights.map((item, i) => (
-                      <li key={i} className="flex gap-2">
-                        <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full bg-muted-foreground/50" />
+                      <li key={i} className="flex gap-2 items-start">
+                        <span className="mt-[6px] shrink-0 w-1 h-1 rounded-full bg-muted-foreground/50" />
                         {item}
                       </li>
                     ))}
