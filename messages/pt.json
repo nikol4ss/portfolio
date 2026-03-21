@@ -50,7 +50,7 @@
     "title": "Projetos em",
     "title_highlight": "destaque",
     "code": "Código",
-    "view_all": "Ver todos os projetos no GitHub",
+    "view_all": "Ver todos os projetos no",
     "p1_desc": "API de pagamentos multi-gateway com fallback automático, roles de acesso e reembolso por gateway de origem.",
     "p2_desc": "Microsserviço de monitoramento de preços com scraping dinâmico via Selenium, processamento com Pandas e endpoints REST para histórico e média de preços.",
     "p3_desc": "Port do Doom rodando dentro de um PDF via JavaScript, C compilado com Emscripten para asm.js, renderizado em ASCII via campos de texto.",

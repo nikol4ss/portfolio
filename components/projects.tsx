@@ -1,7 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, ExternalLink, Github, Star } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Github,
+  Star,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 
@@ -77,7 +83,9 @@ export function Projects() {
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-balance">
               {t("title")}{" "}
-              <span className="text-muted-foreground">{t("title_highlight")}</span>
+              <span className="text-muted-foreground">
+                {t("title_highlight")}
+              </span>
             </h2>
           </div>
 
@@ -112,15 +120,15 @@ export function Projects() {
           {projects.map((project) => (
             <div
               key={project.name}
-              className="min-w-[320px] md:min-w-[380px] p-6 rounded-2xl border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all duration-300 snap-start group"
+              className="min-w-[300px] md:min-w-[600px] p-5 md:p-8 rounded-2xl border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all duration-300 snap-start group"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
                     <Github className="w-5 h-5 text-muted-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground group-hover:text-foreground/80 transition-colors">
+                    <h3 className="font-semibold text-lg text-foreground group-hover:text-foreground/80 transition-colors">
                       {project.name}
                     </h3>
                     <span className="text-xs text-muted-foreground">
@@ -128,50 +136,50 @@ export function Projects() {
                     </span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <Star className="w-3 h-3" />
-                    {project.stars}
-                  </span>
-                </div>
+                <span className="flex items-center gap-1 text-xs text-muted-foreground mt-1 shrink-0">
+                  <Star className="w-3 h-3" />
+                  {project.stars}
+                </span>
               </div>
 
               <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="border border-border/50 bg-white/5 backdrop-blur-md text-xs px-2 py-1 rounded-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-              <div className="flex items-center gap-3">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  {t("code")}
-                </a>
-                {project.demo && (
+                <div className="flex items-center gap-4 shrink-0">
                   <a
-                    href={project.demo}
+                    href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    <ExternalLink className="w-4 h-4" />
-                    Demo
+                    <Github className="w-4 h-4" />
+                    {t("code")}
                   </a>
-                )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Demo
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -182,9 +190,10 @@ export function Projects() {
             href="https://github.com/nikol4ss?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
           >
             {t("view_all")}
+            <b className="text-white">GitHub</b>
             <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>

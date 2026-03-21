@@ -50,7 +50,7 @@
     "title": "Featured",
     "title_highlight": "projects",
     "code": "Code",
-    "view_all": "View all projects on GitHub",
+    "view_all": "View all projects on",
     "p1_desc": "Multi-gateway payment API with automatic fallback, access roles and refund by origin gateway.",
     "p2_desc": "Price monitoring microservice with dynamic scraping via Selenium, processing with Pandas and REST endpoints for price history and averages.",
     "p3_desc": "Doom port running inside a PDF via JavaScript, C compiled with Emscripten to asm.js, rendered in ASCII via text fields.",
