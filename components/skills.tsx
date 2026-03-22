@@ -57,6 +57,11 @@ export function Skills() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  const getEffectiveColor = (skill: (typeof skills)[number]) => {
+    if (skill.color !== "currentColor") return skill.color;
+    return isDark ? "#ffffff" : "#000000";
+  };
+
   useEffect(() => {
     let i = 0;
 
@@ -89,57 +94,70 @@ export function Skills() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4 max-w-4xl mx-auto overflow-visible">
           {skills.map((skill, index) => {
             const isActive = activeIndex === index;
             const isHovered = hoveredIndex === index;
             const isHighlighted = isActive || isHovered;
+            const effectiveColor = getEffectiveColor(skill);
 
             return (
               <div
                 key={skill.slug}
+                className="relative"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                style={{
-                  borderColor: isHighlighted ? skill.color : undefined,
-                  transition: [
-                    "border-color 500ms cubic-bezier(0.4, 0, 0.2, 1)",
-                    "background-color 500ms cubic-bezier(0.4, 0, 0.2, 1)",
-                  ].join(", "),
-                }}
-                className={`relative aspect-square rounded-xl border flex items-center justify-center cursor-pointer ${
-                  isHighlighted ? "bg-card" : "bg-card/50 border-border"
-                }`}
               >
-                <img
-                  src={`https://cdn.simpleicons.org/${skill.slug}`}
-                  alt={skill.name}
-                  width={28}
-                  height={28}
+                {/* Card */}
+                <div
                   style={{
-                    transform: isHighlighted ? "scale(1.5)" : "scale(1)",
+                    borderColor: isHighlighted ? effectiveColor : undefined,
+                    backgroundColor: isHighlighted
+                      ? `${effectiveColor}18`
+                      : undefined,
+                    boxShadow: isHighlighted
+                      ? `0 0 28px 8px ${effectiveColor}30`
+                      : undefined,
                     transition: [
-                      "transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1)",
-                      "filter 300ms cubic-bezier(0.4, 0, 0.2, 1)",
+                      "border-color 500ms cubic-bezier(0.4, 0, 0.2, 1)",
+                      "background-color 500ms cubic-bezier(0.4, 0, 0.2, 1)",
+                      "box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1)",
                     ].join(", "),
-                    filter: isHighlighted
-                      ? skill.darkIcon
-                        ? isDark
-                          ? "brightness(0) invert(1)"
-                          : "brightness(0)"
-                        : "none"
-                      : isDark
-                        ? "brightness(0) invert(1)"
-                        : "brightness(0)",
                   }}
-                />
+                  className={`aspect-square rounded-md border flex items-center justify-center cursor-pointer backdrop-blur-md border-border/50 bg-white/5 ${
+                    isHighlighted ? "bg-card" : "bg-card/50 border-border"
+                  }`}
+                >
+                  <img
+                    src={`https://cdn.simpleicons.org/${skill.slug}`}
+                    alt={skill.name}
+                    width={28}
+                    height={28}
+                    style={{
+                      transform: isHighlighted ? "scale(1.5)" : "scale(1)",
+                      transition: [
+                        "transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+                        "filter 300ms cubic-bezier(0.4, 0, 0.2, 1)",
+                      ].join(", "),
+                      filter: isHighlighted
+                        ? skill.darkIcon
+                          ? isDark
+                            ? "brightness(0) invert(1)"
+                            : "brightness(0)"
+                          : "none"
+                        : isDark
+                          ? "brightness(0) invert(1)"
+                          : "brightness(0)",
+                    }}
+                  />
+                </div>
 
                 <div
                   style={{
                     transition: "opacity 200ms ease",
                     opacity: isHovered ? 1 : 0,
                   }}
-                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap pointer-events-none z-10"
+                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap pointer-events-none z-[999]"
                 >
                   {skill.name}
                 </div>

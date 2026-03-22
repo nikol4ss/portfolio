@@ -113,7 +113,7 @@ export function About() {
               {works.map((work, index) => (
                 <div
                   key={index}
-                  className="flex flex-col border border-border rounded-sm p-3 bg-card/80 hover:shadow-md transition-shadow"
+                  className="flex flex-col p-3 hover:shadow-md transition-shadow rounded-md border bg-transparent border-border/50 bg-white/5 backdrop-blur-md"
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <div>

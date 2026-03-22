@@ -120,7 +120,7 @@ export function Projects() {
           {projects.map((project) => (
             <div
               key={project.name}
-              className="min-w-[300px] md:min-w-[600px] p-5 md:p-8 rounded-2xl border border-border bg-card/50 hover:bg-card hover:border-foreground/20 transition-all duration-300 snap-start group"
+              className="min-w-[300px] md:min-w-[600px] p-5 md:p-8 rounded-2xl rounded-md border border-border/50 bg-white/5 backdrop-blur-md"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
