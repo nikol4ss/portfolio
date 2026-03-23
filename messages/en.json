@@ -1,6 +1,6 @@
 {
   "nav": {
-    "about": "About",
+    "about": "About me",
     "skills": "Technologies",
     "projects": "Projects"
   },
@@ -10,40 +10,40 @@
     "subtitle": "Full Stack",
     "description": "+3 years in Node.js with TypeScript building RESTful APIs",
     "cta_contact": "Contact Me",
-    "cta_projects": "See Projects"
+    "cta_projects": "View Projects"
   },
   "about": {
     "section_label": "About me",
-    "greeting": "Hello,",
+    "greeting": "Greetings,",
     "greeting_sub": "I started my career three years ago.",
-    "p1": "I build and maintain asynchronous RESTful APIs in Node.js with TypeScript. Fastify for modular and custom architecture, AdonisJS for distributed and integrated applications. Authentication with JWT and OAuth, security with CORS, CSRF and Rate Limiting, contract validation with Zod and robust serialization.",
-    "p2": "On the data layer, I work with SQL and NoSQL — PostgreSQL, MySQL and MongoDB with Prisma ORM, migrations and seeds. Redis for caching and RabbitMQ for messaging.",
-    "p3": "Reusable interfaces in Vue.js with Vue Router, Pinia for state, TanStack Query for async data and Tailwind CSS with component libraries like Shadcn and PrimeVue. Experience in SPA, SSR and SSG with focus on performance and SEO.",
-    "p4": "Containerized environments with Docker and Docker Compose, CI/CD pipelines with GitHub Actions, unit and integration tests with Jest and infrastructure on AWS with EC2 and Terraform.",
+    "p1": "I build and maintain RESTful APIs in Node.js with TypeScript, using Fastify for modular architectures with full control over routing and plugins, and AdonisJS for building microservices with a complete structure including ORM, authentication, and integrated CLI. Contract validation with Zod, authentication with JWT and OAuth, and security with CORS, CSRF, and Rate Limiting.",
+    "p2": "At the data layer, I work with SQL and NoSQL: PostgreSQL and MySQL via Prisma ORM with migrations and seeds, and MongoDB for flexible structures. Redis for high-volume request caching and RabbitMQ for messaging in distributed flows.",
+    "p3": "On the frontend, I develop reusable interfaces in Vue.js, using Vue Router for navigation, Pinia for global state, TanStack Query for asynchronous data, and Tailwind CSS with Shadcn and PrimeVue. Experience with SPA, SSR, and SSG focusing on performance and SEO.",
+    "p4": "Infrastructure with Docker and Docker Compose, CI/CD pipelines with GitHub Actions, unit and integration tests with Jest, and provisioning on AWS using EC2 and Terraform.",
     "status_label": "Current Work",
-    "status_title": "Working on freelance and personal projects.",
+    "status_title": "Developing freelance and personal projects.",
     "status_sub": "Looking for opportunities as a Fullstack or Backend Developer.",
     "experience_label": "Experience",
     "v4_type": "Remote",
-    "v4_period": "May 2025 - Dec 2025 · 8 months",
-    "v4_h1": "Contributed to the development of a multi-tenant SaaS in Node.js/TypeScript and Vue.js, serving +100 users with Redis caching.",
-    "v4_h2": "Refactored legacy Node.js (JavaScript) API to REST with Fastify (TypeScript) + Zod + Prisma ORM, reducing ~80% of validation errors and timeouts.",
-    "v4_h3": "Maintained legacy corporate system in PHP 7/NGINX, eliminating bottlenecks and improving core application logic in production.",
-    "v4_h4": "Implemented data ingestion with Python (Pandas, SQLAlchemy) for MySQL integration, ensuring consistency and eliminating duplicates.",
+    "v4_period": "May 2025 - Dec 2025",
+    "v4_h1": "Refactored a legacy JavaScript API to TypeScript using Fastify, Zod, and Prisma ORM, eliminating ~80% of validation errors identified through Pino logs and direct user feedback, reducing timeouts and stabilizing request flow.",
+    "v4_h2": "Implemented Redis caching to resolve overload in the request queue of a multi-tenant SaaS, reducing response time from ~5s to 2-3s in production serving 100+ concurrent users.",
+    "v4_h3": "Restructured a legacy corporate system in PHP 7/NGINX, fixing duplicated logic, poorly allocated queries, and a JWT memory leak that exposed tokens and blocked subsequent requests.",
+    "v4_h4": "Implemented a data ingestion pipeline with Python and Pandas to process 100k+ records with unique IDs, replacing outdated Excel spreadsheets and eliminating duplicates before insertion into MySQL.",
     "capsul_type": "On-site",
-    "capsul_period": "Jun 2024 - May 2025 · 1 year",
-    "capsul_h1": "Participated in the migration of the core logistics system from Python/FastAPI to Node.js/Fastify, fixing request failures that caused order loss.",
-    "capsul_h2": "Integrated sales platforms and carriers like Correios and Monetizze via APIs and Webhooks, mapping payloads for order consumption and dispatch.",
-    "capsul_h3": "Developed internal ticket system with Aeria Lang (Node.js/Vue.js/MongoDB) and RabbitMQ messaging, centralizing communication between dev and support.",
-    "capsul_h4": "Automated tests and operational processes with Python (Selenium, Pytest) in a 24/7 loop for checkout form validation.",
-    "capsul_h5": "Implemented CI/CD pipelines with GitHub Actions and Docker Compose, deploying via SSH on Linux with Terraform for AWS infrastructure."
+    "capsul_period": "Jun 2024 - May 2025",
+    "capsul_h1": "Participated in the migration of the core logistics system from Python/FastAPI to Node.js/Fastify, fixing request failures that caused loss of 300-500 orders per sales peak, with ticket values between $20 and $1,000.",
+    "capsul_h2": "Integrated 20+ sales platforms and 5 major carriers in Brazil via APIs and Webhooks, standardizing payload mapping for processing and dispatch of 5k-10k orders.",
+    "capsul_h3": "Developed an internal ticketing system using Aeria Lang and RabbitMQ, centralizing decentralized demands from support, logistics, and integrations into a single interface with priority and impact, eliminating operational noise between teams.",
+    "capsul_h4": "Automated checkout form validation using Python and Selenium in a 24/7 loop, covering multiple payment methods including card, PIX, and variations, replacing a previously manual process.",
+    "capsul_h5": "Implemented CI/CD pipelines with GitHub Actions for two isolated environments (Node.js backend and Aeria Lang), replacing manual SSH deploys with a structured PR, build, and delivery process using Docker Compose and Terraform on AWS."
   },
   "skills": {
     "label": "Technologies",
-    "title": "Stack I",
+    "title": "Stack that I",
     "title_highlight": "master",
-    "footer1": "Always adapting to new technologies.",
-    "footer2": "Learning whatever the challenge demands."
+    "footer1": "Always adapting to new technologies in the market.",
+    "footer2": "Learning whatever the challenge requires."
   },
   "projects": {
     "label": "Portfolio",
@@ -51,35 +51,42 @@
     "title_highlight": "projects",
     "code": "Code",
     "view_all": "View all projects on",
-    "p1_desc": "Multi-gateway payment API with automatic fallback, access roles and refund by origin gateway.",
-    "p2_desc": "Price monitoring microservice with dynamic scraping via Selenium, processing with Pandas and REST endpoints for price history and averages.",
-    "p3_desc": "Doom port running inside a PDF via JavaScript, C compiled with Emscripten to asm.js, rendered in ASCII via text fields.",
-    "p4_desc": "Robotic automation in Python controlling LEGO NXT motors and sensors for programmable movement."
+    "p1_desc": "Multi-gateway RESTful payment API with automatic fallback by priority, role-based access control, and refunds through the originating gateway.",
+    "p3_desc": "Doom port running inside a PDF via JavaScript, with C code compiled via Emscripten to asm.js and rendered in ASCII."
   },
   "contact": {
     "label": "Contact",
     "title": "Let's work",
     "title_highlight": "together?",
-    "subtitle": "Like my profile? Get in touch for project collaboration.",
+    "subtitle": "Liked my profile? Get in touch for project collaboration.",
     "name": "Name",
     "name_placeholder": "Your name",
     "email": "Email",
     "phone": "Phone",
-    "project_type": "Project Type",
+    "project_type": "Contact Reason",
     "select_placeholder": "Select an option",
     "message": "Message",
-    "message_placeholder": "Tell me more about your project...",
+    "message_placeholder": "Describe the purpose of your contact",
+
+    "msg_freelance": "Describe the project, scope, and timeline...",
+    "msg_api_maintenance": "Describe the API, current issues, and goals...",
+    "msg_hiring": "Describe the role, responsibilities, and stack...",
+    "msg_collaboration": "Describe the idea and how we can collaborate...",
+    "msg_other": "Describe your need...",
+
     "send": "Send Message",
     "sending": "Sending...",
     "sent": "Message Sent!",
     "connect": "Or connect with me",
     "resume": "Resume",
     "resume_sub": "Download PDF",
-    "opt_freelance": "Freelance Development",
-    "opt_saas": "SaaS Project",
-    "opt_rpa": "Automation / RPA",
-    "opt_consulting": "Consulting",
+    "opt_freelance": "Freelance Project",
+    "opt_api_maintenance": "API Maintenance and Evolution",
+    "opt_hiring": "Hiring / Job Opportunity",
+    "opt_collaboration": "Collaborative Projects",
     "opt_other": "Other"
   },
-  "footer": { "rights": "All rights reserved." }
+  "footer": {
+    "rights": "All rights reserved."
+  }
 }
