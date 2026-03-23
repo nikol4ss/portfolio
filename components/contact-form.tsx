@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -10,13 +9,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
 import { CheckCircle, Download, Github, Linkedin, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 
 export function ContactForm() {
   const t = useTranslations("contact");
-
+  const { toast } = useToast();
   const serviceOptions = [
     { value: "freelance", label: t("opt_freelance") },
     { value: "hiring", label: t("opt_hiring") },
@@ -35,6 +35,22 @@ export function ContactForm() {
     message: "",
   });
 
+  function formatPhone(value: string) {
+    const numbers = value.replace(/\D/g, "").slice(0, 11);
+
+    if (numbers.length <= 10) {
+      // (00) 0000-0000
+      return numbers
+        .replace(/(\d{2})(\d)/, "($1) $2")
+        .replace(/(\d{4})(\d)/, "$1-$2");
+    }
+
+    // (00) 00000-0000
+    return numbers
+      .replace(/(\d{2})(\d)/, "($1) $2")
+      .replace(/(\d{5})(\d)/, "$1-$2");
+  }
+
   const currentPlaceholder = formData.service
     ? t(`msg_${formData.service}`)
     : t("message_placeholder");
@@ -43,7 +59,11 @@ export function ContactForm() {
     e.preventDefault();
 
     if (!formData.email || !formData.service) {
-      alert("Email e motivo são obrigatórios");
+      toast({
+        title: "Erro",
+        description: "Email e motivo são obrigatórios",
+        variant: "destructive",
+      });
       return;
     }
 
@@ -59,8 +79,13 @@ export function ContactForm() {
       });
 
       if (!res.ok) {
-        throw new Error("Erro ao enviar");
+        throw new Error();
       }
+
+      toast({
+        title: "Mensagem enviada",
+        description: "Recebi seu contato e retornarei em breve.",
+      });
 
       setIsSubmitted(true);
       setFormData({
@@ -70,9 +95,12 @@ export function ContactForm() {
         service: "",
         message: "",
       });
-    } catch (err) {
-      console.error(err);
-      alert("Falha ao enviar");
+    } catch {
+      toast({
+        title: "Erro",
+        description: "Falha ao enviar mensagem",
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -144,7 +172,10 @@ export function ContactForm() {
                     placeholder="(00) 00000-0000"
                     value={formData.phone}
                     onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
+                      setFormData({
+                        ...formData,
+                        phone: formatPhone(e.target.value),
+                      })
                     }
                     className="bg-card border-border focus:border-foreground/50"
                   />
