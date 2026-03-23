@@ -25,29 +25,13 @@ export function Projects() {
       tags: ["Node.js", "AdonisJs", "MySQL", "Docker"],
     },
     {
-      name: "Web-Scraper API",
-      description: t("p2_desc"),
-      language: "Python",
-      stars: 2,
-      url: "https://github.com/nikol4ss/web-scraper-api",
-      tags: ["Python", "Selenium", "API"],
-    },
-    {
       name: "Doom PDF",
       description: t("p3_desc"),
       language: "Python",
       stars: 8,
       url: "https://github.com/nikol4ss/doompdf",
       demo: "https://doompdf.pages.dev/doom.pdf",
-      tags: ["Python", "Selenium", "API"],
-    },
-    {
-      name: "NXT Lego Python",
-      description: t("p4_desc"),
-      language: "Python",
-      stars: 0,
-      url: "https://github.com/nikol4ss/nxt-lego",
-      tags: ["Python", "Selenium", "API"],
+      tags: ["JavaScript", "Emscripten", "C", "Interactive-PDF"],
     },
   ];
 
@@ -75,7 +59,7 @@ export function Projects() {
 
   return (
     <section id="projetos" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="flex items-end justify-between mb-12">
           <div>
             <span className="text-sm uppercase tracking-widest text-muted-foreground mb-4 block">

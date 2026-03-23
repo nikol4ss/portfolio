@@ -12,26 +12,6 @@ export function About() {
       type: t("v4_type"),
       period: t("v4_period"),
       highlights: [t("v4_h1"), t("v4_h2"), t("v4_h3"), t("v4_h4")],
-      techs: [
-        "TypeScript",
-        "Python",
-        "PHP",
-        "Node.js",
-        "Fastify",
-        "Zod",
-        "Vue.js",
-        "Axios",
-        "TanStack",
-        "Shadcn",
-        "MySQL",
-        "Prisma",
-        "Redis",
-        "Git",
-        "GitHub",
-        "Jest",
-        "Docker",
-        "Kanban",
-      ],
     },
     {
       company: "Capsul Brasil",
@@ -44,24 +24,6 @@ export function About() {
         t("capsul_h3"),
         t("capsul_h4"),
         t("capsul_h5"),
-      ],
-      techs: [
-        "TypeScript",
-        "Python",
-        "Node.js",
-        "FastApi",
-        "Fastify",
-        "Vue.js",
-        "TanStack",
-        "MongoDB",
-        "RabbitMQ",
-        "Selenium",
-        "Pytest",
-        "Jest",
-        "Docker",
-        "GitHub Actions",
-        "Terraform",
-        "AWS",
       ],
     },
   ];
@@ -113,20 +75,19 @@ export function About() {
               {works.map((work, index) => (
                 <div
                   key={index}
-                  className="flex flex-col p-3 hover:shadow-md transition-shadow rounded-md border bg-transparent border-border/50 bg-white/5 backdrop-blur-md"
+                  className="flex flex-col p-3 pb-0 hover:shadow-md transition-shadow rounded-md border bg-transparent border-border/50 bg-white/5 backdrop-blur-md"
                 >
-                  <div className="flex items-center gap-3 mb-2">
-                    <div>
-                      <h4 className="font-bold text-foreground leading-tight">
-                        {work.role}{" "}
-                        <span className="text-sm text-muted-foreground font-normal">
-                          {work.company} · {work.type}
-                        </span>
-                      </h4>
-                      <div className="text-sm text-muted-foreground">
-                        {work.period}
-                      </div>
-                    </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center mb-2">
+                    <h4 className="flex-1 font-bold text-foreground leading-tight">
+                      {work.role}{" "}
+                      <span className="text-base text-muted-foreground font-normal">
+                        {work.company}
+                      </span>
+                    </h4>
+
+                    <span className="text-sm text-muted-foreground sm:text-right">
+                      {work.period}
+                    </span>
                   </div>
 
                   <ul className="text-sm text-muted-foreground mb-3 space-y-1 list-none">
@@ -137,17 +98,6 @@ export function About() {
                       </li>
                     ))}
                   </ul>
-
-                  <div className="flex flex-wrap gap-2">
-                    {work.techs.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="border border-border/50 bg-white/5 backdrop-blur-md text-xs px-1 py-1 rounded-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               ))}
             </div>

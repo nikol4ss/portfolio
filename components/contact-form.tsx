@@ -19,9 +19,9 @@ export function ContactForm() {
 
   const serviceOptions = [
     { value: "freelance", label: t("opt_freelance") },
-    { value: "saas", label: t("opt_saas") },
-    { value: "rpa", label: t("opt_rpa") },
-    { value: "consulting", label: t("opt_consulting") },
+    { value: "hiring", label: t("opt_hiring") },
+    { value: "collaboration", label: t("opt_collaboration") },
+    { value: "api_maintenance", label: t("opt_api_maintenance") },
     { value: "other", label: t("opt_other") },
   ];
 
@@ -35,16 +35,47 @@ export function ContactForm() {
     message: "",
   });
 
+  const currentPlaceholder = formData.service
+    ? t(`msg_${formData.service}`)
+    : t("message_placeholder");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-    }, 3000);
+
+    if (!formData.email || !formData.service) {
+      alert("Email e motivo são obrigatórios");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Erro ao enviar");
+      }
+
+      setIsSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+    } catch (err) {
+      console.error(err);
+      alert("Falha ao enviar");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -124,6 +155,7 @@ export function ContactForm() {
                   </label>
                   <Select
                     value={formData.service}
+                    required
                     onValueChange={(value) =>
                       setFormData({ ...formData, service: value })
                     }
@@ -148,7 +180,7 @@ export function ContactForm() {
                 </label>
                 <Textarea
                   id="message"
-                  placeholder={t("message_placeholder")}
+                  placeholder={currentPlaceholder}
                   rows={5}
                   value={formData.message}
                   onChange={(e) =>
