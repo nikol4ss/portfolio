@@ -30,7 +30,7 @@ export function Projects() {
       name: 'To-do List',
       description: t('p3_desc'),
       language: 'Python',
-      stars: 8,
+      stars: 1,
       url: 'https://github.com/nikol4ss/to-do-list',
       tags: ['Django', 'DRF', 'React', 'Pytest', 'Docker'],
     },
