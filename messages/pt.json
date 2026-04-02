@@ -52,8 +52,8 @@
     "code": "Código",
     "view_all": "Ver todos os projetos no",
     "p1_desc": "API RESTful de pagamentos multi-gateway com fallback automático por prioridade, controle de acesso por roles e reembolso pelo gateway de origem.",
-    "p2_long": "API RESTful para gestão financeira com suporte a receitas, despesas, categorização e recorrência mensal, construída com Node.js, TypeScript e Fastify.",
-    "p3_long": "Aplicação full stack para gerenciamento de tarefas com autenticação JWT, categorias, compartilhamento com permissão de leitura ou edição entre usuários e notificações por e-mail via SMTP.",
+    "p2_desc": "API RESTful para gestão financeira com suporte a receitas, despesas, categorização e recorrência mensal, construída com Node.js, TypeScript e Fastify.",
+    "p3_desc": "Aplicação full stack para gerenciamento de tarefas com autenticação JWT, categorias, compartilhamento com permissão de leitura ou edição entre usuários e notificações por e-mail via SMTP.",
     "p4_desc": "Port do Doom executado dentro de um PDF via JavaScript, com código em C compilado via Emscripten para asm.js e renderização em ASCII."
   },
   "contact": {
