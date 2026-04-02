@@ -24,7 +24,7 @@ export function Projects() {
       language: 'TypeScript',
       stars: 2,
       url: 'https://github.com/nikol4ss/finance-wallet-api',
-      tags: ['Node.js', 'Fastify', 'PostgreSQL', 'Docker'],
+      tags: ['Node.js', 'Fastify', 'Drizzle', 'PostgreSQL', 'Docker'],
     },
     {
       name: 'To-do List',
