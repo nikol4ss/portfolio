@@ -16,10 +16,10 @@
     "section_label": "About me",
     "greeting": "Greetings,",
     "greeting_sub": "I started my career three years ago.",
-    "p1": "I build and maintain RESTful APIs in Node.js with TypeScript, using Fastify for modular architectures with full control over routing and plugins, and AdonisJS for building microservices with a complete structure including ORM, authentication, and integrated CLI. Contract validation with Zod, authentication with JWT and OAuth, and security with CORS, CSRF, and Rate Limiting.",
-    "p2": "At the data layer, I work with SQL and NoSQL: PostgreSQL and MySQL via Prisma ORM with migrations and seeds, and MongoDB for flexible structures. Redis for high-volume request caching and RabbitMQ for messaging in distributed flows.",
-    "p3": "On the frontend, I develop reusable interfaces in Vue.js, using Vue Router for navigation, Pinia for global state, TanStack Query for asynchronous data, and Tailwind CSS with Shadcn and PrimeVue. Experience with SPA, SSR, and SSG focusing on performance and SEO.",
-    "p4": "Infrastructure with Docker and Docker Compose, CI/CD pipelines with GitHub Actions, unit and integration tests with Jest, and provisioning on AWS using EC2 and Terraform.",
+    "p1": "I build and maintain RESTful APIs in Node.js with TypeScript, using Fastify for modular architectures with full control over routing and plugins, and Django with DRF for microservices with a complete structure. Contract validation with Zod, authentication with JWT and OAuth, and security with CORS, CSRF and Rate Limiting.",
+    "p2": "At the data layer I work with SQL and NoSQL: PostgreSQL and MySQL via Prisma ORM with migrations and seeds, and MongoDB for flexible structures. Redis for high-volume request caching and RabbitMQ for messaging in distributed flows.",
+    "p3": "On the frontend I develop reusable interfaces in Vue.js with Vue Router for navigation, Pinia for global state, TanStack Query for async data and Tailwind CSS with Shadcn and PrimeVue. Experience with SPA, SSR and SSG focused on performance and SEO.",
+    "p4": "Infrastructure with Docker and Docker Compose, CI/CD pipelines with GitHub Actions, unit and integration tests with Jest, and provisioning on AWS with EC2 and Terraform.",
     "status_label": "Current Work",
     "status_title": "Developing freelance and personal projects.",
     "status_sub": "Looking for opportunities as a Fullstack or Backend Developer.",
@@ -52,7 +52,9 @@
     "code": "Code",
     "view_all": "View all projects on",
     "p1_desc": "Multi-gateway RESTful payment API with automatic fallback by priority, role-based access control, and refunds through the originating gateway.",
-    "p3_desc": "Doom port running inside a PDF via JavaScript, with C code compiled via Emscripten to asm.js and rendered in ASCII."
+    "p2_long": "RESTful API for financial management with support for income, expenses, categorization and monthly recurrence, built with Node.js, TypeScript and Fastify.",
+    "p3_long": "Full stack task management application with JWT authentication, categories, read/edit permission sharing between users and email notifications via SMTP.",
+    "p4_desc": "Doom port running inside a PDF via JavaScript, with C code compiled via Emscripten to asm.js and rendered in ASCII."
   },
   "contact": {
     "label": "Contact",
