@@ -8,7 +8,7 @@ export function About() {
   const works = [
     {
       company: "V4 Company",
-      role: "Full Stack Developer",
+      role: "Back End Developer",
       type: t("v4_type"),
       period: t("v4_period"),
       highlights: [t("v4_h1"), t("v4_h2"), t("v4_h3"), t("v4_h4")],

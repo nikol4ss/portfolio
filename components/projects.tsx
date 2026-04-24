@@ -1,47 +1,53 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, ExternalLink, Github, Star } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import { useRef, useState } from 'react';
+import { Button } from "@/components/ui/button";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Github,
+  Star,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
 
 export function Projects() {
-  const t = useTranslations('projects');
+  const t = useTranslations("projects");
 
   const projects = [
     {
-      name: 'Multi-Gateway Payment API',
-      description: t('p1_desc'),
-      language: 'TypeScript',
+      name: "Multi-Gateway Payment API",
+      description: t("p1_desc"),
+      language: "TypeScript",
       stars: 2,
-      url: 'https://github.com/nikol4ss/multi-gateway-payment-api',
-      demo: 'https://www.postman.com/nikol4ss/api-public/collection/43306273-9c441f93-f912-4330-b209-194eb24bb151?action=share&source=copy-link&creator=43306273',
-      tags: ['Node.js', 'AdonisJs', 'MySQL', 'Docker'],
+      url: "https://github.com/nikol4ss/multi-gateway-payment-api",
+      demo: "https://www.postman.com/nikol4ss/api-public/collection/43306273-9c441f93-f912-4330-b209-194eb24bb151?action=share&source=copy-link&creator=43306273",
+      tags: ["Node.js", "AdonisJs", "MySQL", "Docker"],
     },
     {
-      name: 'Finance Wallet API',
-      description: t('p2_desc'),
-      language: 'TypeScript',
+      name: "Finance Wallet API",
+      description: t("p2_desc"),
+      language: "TypeScript",
       stars: 2,
-      url: 'https://github.com/nikol4ss/finance-wallet-api',
-      tags: ['Node.js', 'Fastify', 'Drizzle', 'PostgreSQL', 'Docker'],
+      url: "https://github.com/nikol4ss/finance-wallet-api",
+      tags: ["Node.js", "Fastify", "Drizzle", "PostgreSQL", "Docker"],
     },
     {
-      name: 'To-do List',
-      description: t('p3_desc'),
-      language: 'Python',
+      name: "To-do List",
+      description: t("p3_desc"),
+      language: "Python",
       stars: 1,
-      url: 'https://github.com/nikol4ss/to-do-list',
-      tags: ['Django', 'DRF', 'React', 'Pytest', 'Docker'],
+      url: "https://github.com/nikol4ss/to-do-list",
+      tags: ["Django", "DRF", "React", "Pytest", "Docker"],
     },
     {
-      name: 'Doom PDF',
-      description: t('p4_desc'),
-      language: 'Python',
+      name: "Doom PDF",
+      description: t("p4_desc"),
+      language: "Python",
       stars: 8,
-      url: 'https://github.com/nikol4ss/doompdf',
-      demo: 'https://doompdf.pages.dev/doom.pdf',
-      tags: ['JavaScript', 'Emscripten', 'C', 'Interactive-PDF'],
+      url: "https://github.com/nikol4ss/doompdf",
+      demo: "https://doompdf.pages.dev/doom.pdf",
+      tags: ["JavaScript", "Emscripten", "C", "Interactive-PDF"],
     },
   ];
 
@@ -57,11 +63,11 @@ export function Projects() {
     }
   };
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: direction === 'left' ? -400 : 400,
-        behavior: 'smooth',
+        left: direction === "left" ? -400 : 400,
+        behavior: "smooth",
       });
       setTimeout(checkScroll, 300);
     }
@@ -73,11 +79,13 @@ export function Projects() {
         <div className="flex items-end justify-between mb-12">
           <div>
             <span className="text-sm uppercase tracking-widest text-muted-foreground mb-4 block">
-              {t('label')}
+              {t("label")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-balance">
-              {t('title')}{' '}
-              <span className="text-muted-foreground">{t('title_highlight')}</span>
+              {t("title")}{" "}
+              <span className="text-muted-foreground">
+                {t("title_highlight")}
+              </span>
             </h2>
           </div>
 
@@ -85,7 +93,7 @@ export function Projects() {
             <Button
               variant="outline"
               size="icon"
-              onClick={() => scroll('left')}
+              onClick={() => scroll("left")}
               disabled={!canScrollLeft}
               className="disabled:opacity-30"
             >
@@ -94,7 +102,7 @@ export function Projects() {
             <Button
               variant="outline"
               size="icon"
-              onClick={() => scroll('right')}
+              onClick={() => scroll("right")}
               disabled={!canScrollRight}
               className="disabled:opacity-30"
             >
@@ -107,7 +115,7 @@ export function Projects() {
           ref={scrollRef}
           onScroll={checkScroll}
           className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 -mx-6 px-6 snap-x snap-mandatory"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {projects.map((project) => (
             <div
@@ -158,7 +166,7 @@ export function Projects() {
                     className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <Github className="w-4 h-4" />
-                    {t('code')}
+                    {t("code")}
                   </a>
                   {project.demo && (
                     <a
@@ -184,7 +192,7 @@ export function Projects() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
           >
-            {t('view_all')}
+            {t("view_all")}
             <b className="text-white">GitHub</b>
             <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
