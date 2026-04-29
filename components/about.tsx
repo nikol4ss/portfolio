@@ -8,14 +8,14 @@ export function About() {
   const works = [
     {
       company: "V4 Company",
-      role: "Back End Developer",
+      role: "Backend Developer",
       type: t("v4_type"),
       period: t("v4_period"),
       highlights: [t("v4_h1"), t("v4_h2"), t("v4_h3"), t("v4_h4")],
     },
     {
       company: "Capsul Brasil",
-      role: "Full Stack Developer",
+      role: "Fullstack Developer Junior",
       type: t("capsul_type"),
       period: t("capsul_period"),
       highlights: [
@@ -45,7 +45,7 @@ export function About() {
               <p>{t("p1")}</p>
               <p>{t("p2")}</p>
               <p>{t("p3")}</p>
-              <p>{t("p4")}</p>
+              <p>{t("p5")}</p>
             </div>
 
             <div className="mt-5 pt-5 border-t border-border">

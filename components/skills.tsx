@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 const skills = [
+  { name: ".NET", slug: "dotnet", color: "#512BD4" },
   { name: "TypeScript", slug: "typescript", color: "#3178C6" },
   { name: "Python", slug: "python", color: "#3776AB" },
   { name: "Node.js", slug: "nodedotjs", color: "#5FA04E" },
@@ -14,7 +15,6 @@ const skills = [
   { name: "FastAPI", slug: "fastapi", color: "#009688" },
   { name: "Postman", slug: "postman", color: "#FF6C37" },
   { name: "Vue.js", slug: "vuedotjs", color: "#4FC08D" },
-  { name: "Vite", slug: "vite", color: "#646CFF" },
   { name: "Pinia", slug: "pinia", color: "#FFD859" },
   { name: "Axios", slug: "axios", color: "#5A29E4" },
   { name: "TanStack", slug: "tanstack", color: "currentColor", darkIcon: true },
